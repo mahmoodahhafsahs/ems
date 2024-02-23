@@ -72,7 +72,7 @@ const App = () => {
     };
 
     try {
-      const response = await fetch('http://localhost:5000/api/addEmployee', {
+      const response = await fetch('https://ems-1-v6de.onrender.com/api/addEmployee', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
