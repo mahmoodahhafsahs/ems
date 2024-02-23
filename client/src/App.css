@@ -1,0 +1,134 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: url('image.jpg') center/cover fixed no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 10px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.navbar-left {
+  font-size: 24px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.navbar-right button {
+  padding: 6px 10px;
+  cursor: pointer;
+  background-color: rgb(249, 246, 246);
+  color: #2c3e50;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.navbar-right button:hover {
+  background-color: #0c0c0c;
+  color: #d9dfe6;
+}
+
+.app-container {
+  background: #2c3e50;
+  color: white;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 560px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 80%;
+  margin: 0 auto;
+  background-color: white;
+  color: black;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+label {
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+input,
+select {
+  margin-bottom: 16px;
+  padding: 10px;
+  width: calc(100% - 20px);
+  box-sizing: border-box;
+}
+
+select {
+  appearance: none;
+}
+
+button {
+  padding: 12px;
+  cursor: pointer;
+  background-color: #2c3e50;
+  color: rgb(246, 244, 246);
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #305432;
+}
+
+/* Radio button styles */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.radio-label {
+  margin-right: 10px;
+}
+
+/* Additional styles for table if needed */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th {
+  background-color: #f2f2f2;
+  color: black;
+}
+
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  color: white;
+}
