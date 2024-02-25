@@ -6,7 +6,6 @@ const cors = require('cors');
 const app = express();
 const port = 5000;
 
-
 // MySQL connection setup
 const db = mysql.createConnection({
   host: 'bzbz8rqcrmgxvqnuxe9e-mysql.services.clever-cloud.com',
@@ -39,6 +38,10 @@ app.post('/api/addEmployee', (req, res) => {
 
   console.log('Received data:', req.body);
 
+  if (!name || !salary || !dob || !age || !currentAddress || !permanentAddress || !department || !designation) {
+    return res.status(400).json({ success: false, error: 'Please provide all required fields.' });
+  }
+
   const insertQuery = `INSERT INTO employees (name, salary, dob, age, currentAddress, permanentAddress, department, designation) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
 
   db.query(
@@ -48,10 +51,10 @@ app.post('/api/addEmployee', (req, res) => {
       if (err) {
         console.error('Error inserting employee:', err);
         console.error('MySQL Error Code:', err.code);
-        res.status(500).json({ success: false, error: err.message });
+        return res.status(500).json({ success: false, error: err.message });
       } else {
         console.log('Employee added successfully');
-        res.json({ success: true });
+        return res.json({ success: true });
       }
     }
   );
@@ -64,6 +67,17 @@ db.query('SELECT DATABASE()', (err, result) => {
   } else {
     console.log('Selected database:', result[0]['DATABASE()']);
   }
+});
+
+// Close MySQL connection after handling the POST request
+app.post('/api/addEmployee', () => {
+  db.end((err) => {
+    if (err) {
+      console.error('Error closing MySQL connection:', err);
+    } else {
+      console.log('MySQL connection closed');
+    }
+  });
 });
 
 app.listen(port, () => {
