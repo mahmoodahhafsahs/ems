@@ -80,7 +80,7 @@ const App = () => {
 
     try {
       // Send data to the server
-      const response = await fetch('https://ems-1-v6de.onrender.com/api/addEmployee', {
+      const response = await fetch('https://ems-3.onrender.com/api/addEmployee', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

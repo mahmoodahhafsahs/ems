@@ -69,17 +69,6 @@ db.query('SELECT DATABASE()', (err, result) => {
   }
 });
 
-// Close MySQL connection after handling the POST request
-app.post('/api/addEmployee', () => {
-  db.end((err) => {
-    if (err) {
-      console.error('Error closing MySQL connection:', err);
-    } else {
-      console.log('MySQL connection closed');
-    }
-  });
-});
-
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
